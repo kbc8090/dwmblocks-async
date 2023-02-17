@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/sh
 
 uname -r | nawk '{print "\x0e  " $0 " \x0b"}'
 # uptime | sed 's/,//g' | nawk '{printf "\x0e Up:" $3 $4 " \x0b"}'

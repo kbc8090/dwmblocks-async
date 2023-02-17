@@ -1,3 +1,4 @@
-#! /bin/sh 
+#!/bin/sh
 
-free -h | sed 's/i//g' | nawk '/Mem:/ {print "\x10  " $3 "/" $2 " \x0b"}'
+free -h | nawk '/Mem:/ {gsub(/i/,""); print "\x10  " $3 "/" $2 " \x0b"}'
+# free | nawk 'NR==2 {printf ("\x10 %2.0fM\n", ($3 / 1024) $4)}'
