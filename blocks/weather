@@ -4,4 +4,10 @@ WEATHER=$(curl -s 'wttr.in/Gainesville?format=1&u' | sed -e 's/ //g' -e 's/+//g'
 WTEXT=$(grep -o "[0-9].*" <<< "$WEATHER")
 WICON=${WEATHER:0:1}
 
-echo -e "\x0c $WICON $WTEXT \x0b" 
+if [[ $WTEXT ]]
+then
+  echo -e "\x0c $WICON $WTEXT \x0b"
+else
+  echo -e "\x0c Weather Error \x0b"
+fi
+
