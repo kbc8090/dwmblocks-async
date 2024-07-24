@@ -8,6 +8,6 @@ if [[ $WTEXT ]]
 then
   echo -e "\x0c $WICON $WTEXT \x0b"
 else
-  echo -e "\x0c Weather Error \x0b"
+  echo -e "\x0c  Weather Error \x0b"
 fi
 
